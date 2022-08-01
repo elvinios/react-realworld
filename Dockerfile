@@ -6,7 +6,7 @@ WORKDIR realworld-example
 
 RUN yarn install && yarn build
 
-RUN mv ./realworld-example/build ../../
+RUN mv ./build ../../
 
 
 FROM nginx:alpine AS server

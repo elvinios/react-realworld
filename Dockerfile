@@ -6,14 +6,14 @@ WORKDIR realworld-example
 
 RUN yarn install && yarn build
 
-RUN mv /build ../../
+RUN mv /build ../
 
 
 FROM nginx:alpine AS server
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=build ../../build /usr/share/nginx/html
+COPY --from=build ../build /usr/share/nginx/html
 
 # Test Test
 
